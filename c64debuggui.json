@@ -1,0 +1,23 @@
+{
+    "version": "1.1.0",
+    "description": "An app that supplements the excellent C64Debugger. Provides a GUI, so no more keyboard shortcuts and also adds other functionality.",
+    "notes": "C64Debugger.exe in app is updated to latest which works in all Windows.",
+    "homepage": "https://magoarcade.org/download/c64debuggui/",
+    "license": "Unknown",
+    "url": [
+        "https://magoarcade.org/download/c64debuggui/?wpdmdl=18357#/C64DebugGUI.zip",
+        "https://downloads.sourceforge.net/project/c64-debugger/C64%2065XE%20NES%20Debugger%20v0.64.58.6.win32.zip"
+        ],
+    "hash": ["sha1:e66e59ff91b4bb09c8518f3108f92a08151e3b33","sha1:adc237a375f0abbb2f8b0a6e98e23a608cd940c0"],
+    "bin": ["C64DebuggerGUI.exe", "SupportApps\\BinCalc.exe", "SupportApps\\Excal32.exe"],
+    "checkver": "Version\\D*([\\d.]+)",
+    "autoupdate": {
+        "url": "https://magoarcade.org/download/c64debuggui/?wpdmdl=18357#/C64DebugGUI.zip"
+        },
+    "post_uninstall": [
+        "$path = \"$env:USERPROFILE\\AppData\\Local\\C64DebuggerGUI\"",
+        "if (Test-Path -LiteralPath $path) { Remove-Item -LiteralPath $path -Recurse -Force }",
+        "$path = \"$env:USERPROFILE\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\C64DebugGUI\"",
+        "if (Test-Path -LiteralPath $path) { Remove-Item -LiteralPath $path -Recurse -Force }"
+        ]
+}

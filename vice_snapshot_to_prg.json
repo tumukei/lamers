@@ -1,0 +1,26 @@
+{
+    "version": "1.0.0",
+    "description": "Utility that converts VICE 3.6-3.9 x64sc emulator snapshots into self-restoring PRG files that run on real Commodore 64 hardware.",
+    "notes": ["Win7 support via VxKex.",
+        "Start VICE with -raminitvalueinvert 0 -raminitpatterninvert 0 -raminitrandomchance 0",
+        "or the snapshots will have memory init emulation data which does not compress well.",
+        "Also Smart attach works fine with above arguments to VICE."
+    ],
+    "homepage": "https://github.com/tommyo123/Vice_Snapshot_to_PRG",
+    "license": "MIT,Zlib",
+    "hash": "sha1:1361dcb5cc42740606340f4cb6f5df288d2d490e",
+    "url": "https://github.com/tommyo123/Vice_Snapshot_to_PRG/releases/download/v1.0.0/vice-snapshot-to-prg-converter-1.0.0-x86_64-windows-portable.zip",
+    "bin": "vice-snapshot-to-prg-converter-cli.exe",
+    "shortcuts": [
+        [
+            "vice-snapshot-to-prg-converter.exe",
+            "Vice Snapshot to PRG"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/tommyo123/Vice_Snapshot_to_PRG"
+    },
+    "autoupdate": {
+        "url": "https://github.com/tommyo123/Vice_Snapshot_to_PRG/releases/download/v$version/vice-snapshot-to-prg-converter-$version-x86_64-windows-portable.zip"
+    }
+}

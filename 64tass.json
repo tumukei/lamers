@@ -1,0 +1,21 @@
+{
+    "version": "1.60.3243",
+    "description": "An assembler for the legendary 6502 processor and its derivatives",
+    "homepage": "https://tass64.sourceforge.net/",
+    "license": "GPL-2.0-only, LGPL-2.0-only, LGPL-2.1-only",
+    "url": "https://downloads.sourceforge.net/project/tass64/files/binaries/64tass-1.60.3243.zip",
+    "hash": "sha1:30abf9c6a39112298f28bbb6b0c785c0e989c083",
+    "extract_dir": "64tass-1.60.3243",
+    "bin": "64tass.exe",
+    "##": "r195 and before use version tagged bin name, bleh!",
+    "pre_install": "move $dir/64tass_* $dir/64tass.exe",
+    "checkver": {
+        "url": "https://sourceforge.net/projects/tass64/files/binaries/",
+        "re": "64tass-(?<version>\\d+[.]\\d+x?)(?<arr>[.-]r?)(?<build>\\d+)?",
+        "replace": "${version}${arr}${build}"
+    },
+    "autoupdate": {
+        "url": "https://downloads.sourceforge.net/project/tass64/files/binaries/64tass-$version.zip",
+        "extract_dir": "64tass-$version"
+    }
+}

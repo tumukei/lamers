@@ -1,0 +1,36 @@
+{
+    "version": "0.1.1",
+    "description": "ICU64 for VICE 2.1",
+    "notes": [
+        "Needs .NET Framework 3.5 enabled in Windows features.",
+        "Press F1 for help in the main menu and other windows."
+    ],
+    "homepage": "https://icu64.blogspot.com/",
+    "license": "Unknown,GPL-2.0-or-later",
+    "url": [
+        "https://csdb.dk/release/download.php?id=100802#/WinVICE-2.1.zip",
+        "https://csdb.dk/release/download.php?id=238218#/dl.zip"
+    ],
+    "hash": [
+        "sha1:d899bdb167c0584cd397fc3c25ec763633173262",
+        "sha1:da3d572d180c15df031fa7e20a530bc2bc3600d3"
+    ],
+    "extract_dir": ["WinVICE-2.1", ""],
+    "shortcuts": [
+        [
+            "ICU64.exe",
+            "ICU64 for VICE 2.1"
+        ]
+    ],
+    "checkver": {
+        "url": "https://csdb.dk/scener/?id=20277",
+        "re": "download.php.id=(?<dlid>[\\d]+).*?VICE 2.1 V(?<version>[\\d.]+)"
+    },
+    "autoupdate": {
+        "url": [
+            "https://csdb.dk/release/download.php?id=100802#/WinVICE-2.1.zip",
+            "https://csdb.dk/release/download.php?id=$matchDlid#/dl.zip"
+        ]
+    }
+
+}

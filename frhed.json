@@ -1,0 +1,26 @@
+{
+    "version": "1.7.1",
+    "description": "Free hex editor.",
+    "homepage": "https://frhed.sourceforge.net/",
+    "license": "GPL-2.0-only",
+    "suggest": {
+        "vcredist": "extras/vcredist2005"
+    },
+    "url": "https://downloads.sourceforge.net/projects/frhed/3. Alpha Releases/1.7.1/Frhed-1.7.1-exe.zip",
+    "hash": "sha1:2f27d02b8b57fc5faeb5b5b299286b5d8b1a7d7c",
+    "extract_dir": "Frhed-1.7.1-exe",
+    "shortcuts": [
+        [
+            "Frhed.exe",
+            "Frhed"
+        ]
+    ],
+    "checkver": {
+        "url": "https://sourceforge.net/projects/frhed/files/",
+        "re": "[/](?<path>\\d.*)[/]Frhed-([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://downloads.sourceforge.net/projects/frhed/$matchPath/Frhed-$version-exe.zip",
+        "extract_dir": "Frhed-$version-exe"
+    }
+}

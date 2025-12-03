@@ -1,0 +1,29 @@
+{
+    "version": "1.34",
+    "description": "Not a traditional drawing app - more like creative pixel kitbashing with powerful shaders, custom stamps, and scrollable layers. Great for making backdrops, title screens, or pixel art maps.",
+    "homepage": "https://rrfreelance.itch.io/backdropdesigner",
+    "license": "Freeware",
+    "url": "https://csdb.dk/release/download.php?id=261080#/dl.zip",
+    "hash": "f923f36a5c572901dcbab4aab782ccf4c6a1c58c7c4ec3e7dca3c5377943a6ca",
+    "extract_dir": "BackdropDesigner_1_34",
+    "shortcuts": [
+        [
+            "BackdropDesigner_1_34.exe",
+            "Backdrop Designer"
+        ]
+    ],
+    "checkver": {
+        "url": "https://csdb.dk/scener/?id=34506",
+        "re": "download.php.id=(?<dlid>[\\d]+).*?Backdrop Designer V(?<version>[\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://csdb.dk/release/download.php?id=$matchDlid#/dl.zip",
+        "extract_dir": "BackdropDesigner_$underscoreVersion",
+        "shortcuts": [
+            [
+                "BackdropDesigner_$underscoreVersion.exe",
+                "Backdrop Designer"
+            ]
+        ]
+    }
+}

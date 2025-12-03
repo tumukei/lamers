@@ -1,0 +1,42 @@
+{
+    "version": "0.1.3",
+    "description": "ICU64 for VICE 3.x",
+    "notes": [
+        "Needs .NET Framework 3.5 enabled in Windows features.",
+        "Press F1 for help in the main menu and other windows."
+    ],
+    "homepage": "https://icu64.blogspot.com/",
+    "license": "Unknown,GPL-2.0-or-later",
+    "url": "https://csdb.dk/release/download.php?id=238194#/icu64-for-vice3.x-v0.1.3.7z",
+    "hash": "sha1:273c1822c92797d4a3db21281b174efc24dc5f1b",
+    "pre_install": ["copy $dir/ICU64.exe $dir/SDL2VICE-3.4-win64", "move $dir/ICU64.exe $dir/WinVICE-3.2-x86"],
+    "shortcuts": [
+        [
+            "SDL2VICE-3.4-win64\\ICU64.exe",
+            "ICU64 for VICE 3.x/x64 (SDL2 3.4)",
+            "icu64.icu"
+        ],
+        [
+            "SDL2VICE-3.4-win64\\ICU64.exe",
+            "ICU64 for VICE 3.x/x64sc (SDL2 3.4)",
+            "icu64sc.icu"
+        ],
+        [
+            "WinVICE-3.2-x86\\ICU64.exe",
+            "ICU64 for VICE 3.x/x64 (WinVice 3.4)",
+            "icu64.icu"
+        ],
+        [
+            "WinVICE-3.2-x86\\ICU64.exe",
+            "ICU64 for VICE 3.x/x64sc (WinVice 3.4)",
+            "icu64sc.icu"
+        ]
+    ],
+    "checkver": {
+        "url": "https://csdb.dk/scener/?id=20277",
+        "re": "download.php.id=(?<dlid>[\\d]+).*?VICE 3.x V(?<version>[\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://csdb.dk/release/download.php?id=$matchDlid#/dl.zip"
+    }
+}

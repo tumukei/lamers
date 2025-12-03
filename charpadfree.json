@@ -1,0 +1,29 @@
+{
+    "version": "2.8.6",
+    "description": "CharPad is a graphics data editing tool that facilitates the production of graphics data in a format compatible with the legendary Commodore 64 home computer.",
+    "homepage": "https://subchristsoftware.itch.io/charpad-c64-free",
+    "license": "Proprietary",
+    "url": "https://csdb.dk/release/download.php?id=247513#/CharPadFree286_v2.zip",
+    "hash": "sha1:5a0757d64ca0d6c962d2429a0e770222e55997f3",
+    
+    "extract_dir": "CharPad Free 2.86",
+    "architecture": {
+        "32bit": {
+            "shortcuts": [
+                [
+                    "CharPadFree_W32.exe",
+                    "CharPadFree"
+                ]
+            ]
+        },
+        "64bit": {
+            "shortcuts": [
+                [
+                    "CharPadFree_W64.exe",
+                    "CharPadFree"
+                ]
+            ]
+        }
+    },
+    "checkver": "New for the ([\\d.]+)"
+}

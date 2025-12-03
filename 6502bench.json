@@ -1,0 +1,32 @@
+{
+    "version": "1.10.0",
+    "description": "6502bench is an industrial-strength disassembler for 6502, 65C02, and 65816 programs.",
+    "homepage": "https://6502bench.com/",
+    "license": "Apache-2.0",
+    "hash": "9f563f77b144a7c85aceb1ca297c908e50eb3f0822c9df86c2fa470f892b8f30",
+    "url": "https://github.com/fadden/6502bench/releases/download/v1.10.0/6502bench1_10_0.zip",
+    "bin": "SourceGen.exe",
+    "shortcuts": [
+        [
+            "SourceGen.exe",
+            "6502bench"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/fadden/6502bench"
+    },
+    "autoupdate": {
+        "url": "https://github.com/fadden/6502bench/releases/download/v$version/6502bench$underscoreVersion.zip"
+    },
+    "post_install": [
+        "$minReleaseKey = 394802",
+        "$releaseKey = Get-ItemProperty \"HKLM:\\SOFTWARE\\Microsoft\\NET Framework Setup\\NDP\\v4\\Full\" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Release",
+        "if ($null -eq $releaseKey) {",
+        "Write-Host \"You must have .NET Framework v4.6.2 or later installed to run this app.\"",
+        "} else {",
+        "if ($releaseKey -lt $minReleaseKey) {",
+        "Write-Host \"You must have .NET Framework v4.6.2 or later installed to run this app.\"",
+        "}",
+        "}"
+    ]
+}

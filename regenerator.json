@@ -1,0 +1,22 @@
+{
+    "version": "1.75",
+    "description": "Interactive Disassembler for 6510 with Multi System support",
+    "notes": "Needs .NET Framework 3.5 enabled in Windows features.",
+    "homepage": "https://csdb.dk/release/index.php?id=247992",
+    "license": "Freeware",
+    "url": "https://csdb.dk/release/download.php?id=304357#/dl.zip",
+    "hash": "8cadded28e29b6cf99b9297573437900ce7bc0e0f445b5c09ffb16ed5c562fbe",
+    "shortcuts": [
+        [
+            "Regenerator.exe",
+            "Regenerator"
+        ]
+    ],
+    "checkver": {
+        "url": "https://csdb.dk/scener/?id=22803",
+        "re": "download.php.id=(?<dlid>[\\d]+).*?Regenerator (?<version>[\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://csdb.dk/release/download.php?id=$matchDlid#/dl.zip"
+    }
+}

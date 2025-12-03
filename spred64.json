@@ -1,0 +1,28 @@
+{
+    "version": "1.43-beta",
+    "description": "Sprite editor, compositor and animator!",
+    "homepage": "https://rrfreelance.itch.io/spred64-c64-sprite-editor",
+    "license": "Freeware",
+    "url": "https://csdb.dk/release/download.php?id=291863#/dl.zip",
+    "hash": "31bae5e4a5fa17b9feb0ab28ebfd038c3e25acf707768053bd4630cc5992b360",
+    "shortcuts": [
+        [
+            "Spred64_beta1_43.exe",
+            "Spred64 1.43 beta"
+        ]
+    ],
+    "checkver": {
+        "url": "https://csdb.dk/scener/?id=34506",
+        "re": "download.php.id=(?<dlid>[\\d]+).*?Spred64 V?(?<version>[\\d.]+) (?<rc>\\w*)",
+        "replace": "${version}-${rc}"
+    },
+    "autoupdate": {
+        "url": "https://csdb.dk/release/download.php?id=$matchDlid#/dl.zip",
+        "shortcuts": [
+            [
+                "Spred64_$preReleaseVersion$majorVersion_$minorVersion.exe",
+                "Spred64 $majorVersion.$minorVersion $preReleaseVersion"
+            ]
+        ]
+    }
+}

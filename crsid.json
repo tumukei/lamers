@@ -1,0 +1,90 @@
+{
+    "version": "1.5",
+    "description": "a lightweight (integer-only) RealSID playback environment",
+    "notes": ".sid files are now assoc to cRSID, or you can drag'n'drop .sid files or folders on cRSID shortcut.",
+    "homepage": "https://csdb.dk/release/?id=257243",
+    "license": "WTFPL",
+    "url": ["https://csdb.dk/release/download.php?id=316351#/cRSID-1.5.zip",
+            "https://boswme.home.xs4all.nl/HVSC/HVSC_Update_83.7z"],
+    "hash": ["sha1:826d3310c52f43307de957971bd1e147b21f7104",
+             "sha1:edcad167cf88cc39b8d1eaa0a1e4945ad393237f"],
+    "extract_dir": ["cRSID-1.5", "update/DOCUMENTS"],
+    "extract_to": ["", "DOCUMENTS"],
+    "shortcuts": [
+        [
+            "crsid.exe",
+            "crSID 1.5/cRSID"
+
+        ],
+        [
+            "\\windows\\explorer.exe",
+            "crSID 1.5/Music",
+            "$dir\\music"
+        ]
+    ],
+    "bin": [ ["crsid.exe", "crsid", "-cli"] ],
+    "pre_install": ["del $dir/crsid, $dir/crsida, $dir/crsid_*, $dir/*.bat, $dir/*.c, $dir/*.deb, $dir/*.com, $dir/*.sh,  $dir/Makefile",
+    "move $dir/resources/music $dir",
+    "move $dir/resources/test $dir/music",
+    "move $dir/DOCUMENTS/Songlengths.md5 $env:USERPROFILE",
+    "del $dir/GUI, $dir/libcRSID, $dir/resources -recurse",
+    "del $dir/DOCUMENTS -recurse",
+
+    "$classPath = 'HKCU:\\Software\\Classes\\sidfile'",
+    "$extensionPath = 'HKCU:\\Software\\Classes\\.sid'",
+    "$null = ni -Path $extensionPath -Force",
+    "sp -Path $extensionPath -Name '(default)' -Value 'sidfile'",
+    "$null = ni -Path $classPath -Force",
+    "sp -Path $classPath -Name '(default)' -Value 'SID File'",
+    "$null = ni -Path ($classPath + '\\DefaultIcon') -Force",
+    "sp -Path ($classPath + '\\DefaultIcon') -Name '(default)' -Value \"$dir\\cRSID.exe,0\"",
+    "$null = ni -Path ($classPath + '\\shell\\open\\command') -Force",
+    "sp -Path ($classPath + '\\shell\\open\\command') -Name '(default)' -Value \"\"\"$dir\\cRSID.exe\"\" \"\"%1\"\"\"",
+
+    "$code = @'",
+    "[System.Runtime.InteropServices.DllImport(\"Shell32.dll\")]",
+    "private static extern int SHChangeNotify(int eventId, int flags, IntPtr item1, IntPtr item2);",
+    "public static void Refresh() {",
+    "SHChangeNotify(0x8000000, 0x1000, IntPtr.Zero, IntPtr.Zero);",
+    "}",
+    "'@",
+    "Add-Type -MemberDefinition $code -Namespace WinAPI -Name Explorer",
+    "[WinAPI.Explorer]::Refresh()"
+    ],
+    "pre_uninstall": ["del $env:USERPROFILE/Songlengths.md5",
+    "$classPath = 'HKCU:\\Software\\Classes\\sidfile'",
+    "$extensionPath = 'HKCU:\\Software\\Classes\\.sid'",
+    "ri -Path $classPath -recurse",
+    "ri -Path $extensionPath",
+    
+    "$code = @'",
+    "[System.Runtime.InteropServices.DllImport(\"Shell32.dll\")]",
+    "private static extern int SHChangeNotify(int eventId, int flags, IntPtr item1, IntPtr item2);",
+    "public static void Refresh() {",
+    "SHChangeNotify(0x8000000, 0x1000, IntPtr.Zero, IntPtr.Zero);",
+    "}",
+    "'@",
+    "Add-Type -MemberDefinition $code -Namespace WinAPI -Name Explorer",
+    "[WinAPI.Explorer]::Refresh()"
+    ],
+    
+    "checkver": {
+        "url": "https://csdb.dk/scener/?id=18806",
+        "re": "download.php.id=(?<dlid>[\\d]+).*cRSID-(?<version>[\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://csdb.dk/release/download.php?id=$matchDlid#/cRSID-$version.zip",
+        "extract_dir": "cRSID-$version",
+        "shortcuts": [
+            [
+                "crsid.exe",
+                "crSID $version/cRSID"
+            ],
+            [
+            "\\windows\\explorer.exe",
+            "crSID $version/Music",
+            "$dir\\music"
+            ]
+        ]
+    }
+}

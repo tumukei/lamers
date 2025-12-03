@@ -1,0 +1,27 @@
+{
+    "version": "1.00.2018.03.16",
+    "description": "Aimed to become the most accurate C64 Emulator.",
+    "notes": "Press F9 for emulator menu.",
+    "homepage": "https://micro64.de/",
+    "license": "Freeware",
+    "url": "https://www.micro64.de/download/micro64.zip",
+    "hash": "35e887a87e740021d8c3c8b58e74180151af109e8e7f5b5449385951d0420177",
+    "shortcuts": [
+        [
+            "micro64.exe",
+            "micro64"
+        ]
+    ],
+    "architecture": {
+        "32bit": {
+            "extract_dir": "release\\x86_32-win32"
+        },
+        "64bit": {
+            "extract_dir": "release\\x86_64-win64"
+        }
+    },
+    "checkver": " ([\\d.]+) Build",
+    "autoupdate": {
+        "url": "https://www.micro64.de/download/micro64.zip"
+    }
+}

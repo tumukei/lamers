@@ -1,0 +1,42 @@
+{
+    "version": "0.1.2",
+    "description": "ICU64 for VICE 2.3",
+    "notes": [
+        "Needs .NET Framework 3.5 enabled in Windows features.",
+        "Press F1 for help in the main menu and other windows."
+    ],
+    "homepage": "https://icu64.blogspot.com/",
+    "license": "Unknown,GPL-2.0-or-later",
+    "url": [
+        "https://downloads.sourceforge.net/project/vice-emu/releases/binaries/windows/WinVICE-2.3-x86.zip",
+        "https://csdb.dk/release/download.php?id=238216#/dl.zip",
+        "https://csdb.dk/release/download.php?id=238217#/icu64vice23-v0.1.2-patch.zip"
+    ],
+    "##": "The patch is for this version, it fixes zoom-out crash.",
+    "hash": [
+        "sha1:521a0962ca7bd70e16382c4ae485a886d369959a",
+        "49c71f05b6ba455f6a84f2727fd22774904e20513f0f890089ef86e1656de3e0",
+        "4dd669d5a082a260aff193eeface5f386eff670367e34325b2b2319e0b60f509"
+    ],
+    "extract_dir": [
+        "WinVICE-2.3-x86",
+        "",
+        ""
+    ],
+    "shortcuts": [
+        [
+            "ICU64.exe",
+            "ICU64 for VICE 2.3"
+        ]
+    ],
+    "checkver": {
+        "url": "https://csdb.dk/scener/?id=20277",
+        "re": "download.php.id=(?<dlid>[\\d]+).*?VICE 2.3 V(?<version>[\\d.]+)"
+    },
+    "autoupdate": {
+        "url": [
+            "https://downloads.sourceforge.net/project/vice-emu/releases/binaries/windows/WinVICE-2.3-x86.zip",
+            "https://csdb.dk/release/download.php?id=$matchDlid#/dl.zip"
+        ]
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "version": "0.1.3",
+    "description": "ICU64 for VICE 3.7",
+    "notes": [
+        "This ICE64 install includes a custom-built VICE 3.7 that is compatible.",
+        "Needs .NET Framework 3.5 enabled in Windows features.",
+        "Press F1 for help in the main menu and other windows.",
+        "Press ALT+F5 in the ICU64 window to connect to the emulator."
+    ],
+    "homepage": "https://icu64.blogspot.com/",
+    "license": "Unknown,GPL-2.0-or-later",
+    "url": [
+        "https://csdb.dk/release/download.php?id=238194#/icu64.7z",
+        "https://csdb.dk/release/download.php?id=288604#/customvice.7z"
+    ],
+    "hash": [
+        "sha1:273c1822c92797d4a3db21281b174efc24dc5f1b",
+        "sha1:07c3eec730a1d3512a7904f8d7c87ea4099958d6"
+    ],
+    "extract_dir": ["", "GTK3VICE-3.7-win64"],
+    "pre_install": ["move $dir/ICU64.exe $dir/bin", "rd $dir/SDL2VICE-3.4-win64 -recurse", "rd $dir/WinVICE-3.2-x86 -recurse"],
+    "shortcuts": [
+        [
+            "bin\\ICU64.exe",
+            "ICU64 for VICE 3.7/x64sc (GTK3)",
+            "x64sc.icu"
+        ]
+    ],
+    "checkver": {
+        "url": "https://csdb.dk/scener/?id=20277",
+        "re": "download.php.id=(?<dlid>[\\d]+).*?VICE 3.7 V(?<version>[\\d.]+)"
+    },
+    "##": "The icu64 exe url for 3.7 has to be updated manually.",
+    "autoupdate": {
+        "url": [
+            "https://csdb.dk/release/download.php?id=238194#/icu64.7z",
+            "https://csdb.dk/release/download.php?id=$matchDlid#/customvice.7z"
+        ]
+    }
+
+
+}

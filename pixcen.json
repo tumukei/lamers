@@ -1,0 +1,41 @@
+{
+    "version": "0.7.0.50",
+    "description": "C64 low level pixel editor for Windows. Loosely inspired by Photoshop, Deluxe Paint and Ultrafont+",
+    "notes": "32 bit version is 0.7.0.43.",
+    "homepage": "https://github.com/Hammarberg/pixcen",
+    "license": "GPL-3.0-only",
+    "url": "https://binarybone.com/pixcen/pixcen.zip",
+    "architecture": {
+        "32bit": {
+            "url": "https://binarybone.com/pixcen/versions/pixcen-0.7.0-43-ge7f9742.zip",
+            "hash": "sha1:7fb18f6355cf8cd23017ab8fc7d7e6d96e5e452d"
+        },
+        "64bit": {
+            "url": "https://binarybone.com/pixcen/pixcen.zip",
+            "hash": "8c2d2e739e304ee6137de0bdd417c09b356de4127b911fa644e4df125c23497c"
+        }
+    },
+    "shortcuts": [
+        [
+            "pixcen.exe",
+            "Pixcen"
+        ]
+    ],
+    "checkver": {
+        "url": "https://github.com/Hammarberg/pixcen/tags",
+        "re": "/tag/([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "32bit": {
+                "url": "https://binarybone.com/pixcen/versions/pixcen-0.7.0-43-ge7f9742.zip"
+            },
+            "64bit": {
+                "url": "https://binarybone.com/pixcen/pixcen.zip"
+            }
+        },
+        "hash": {
+            "url": "$url.sha1"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "version": "1.8.1",
+    "description": "Sprite Pad is an image editor/animator for sprite images that are compatible with the classic 1980's Commodore 64 home computer system.",
+    "homepage": "https://subchristsoftware.itch.io/spritepad-c64-pro",
+    "license": "Freeware",
+    "url": "https://csdb.dk/release/download.php?id=126220#/spritepad181.zip",
+    "hash": "16351426b50a186617dc6c7186b51bc4045028dad751f6bfd62a7e5a24b885fa",
+    "extract_dir": "SpritePad 1.8",
+    "shortcuts": [
+        [
+            "SpritePad.exe",
+            "SpritePad 1.8"
+        ]
+    ],
+    "checkver": {
+        "url": "https://csdb.dk/group/?id=3510",
+        "re": "download.php.id=(?<dlid>[\\d]+).*SpritePad V(?<version>1.[\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://csdb.dk/release/download.php?id=$matchDlid#/spritepad$cleanVersion.zip",
+        "extract_dir": "SpritePad $majorVersion.$minorVersion",
+        "shortcuts": [
+            [
+                "SpritePad.exe",
+                "SpritePad $majorVersion.$minorVersion"
+            ]
+        ]
+    }
+}

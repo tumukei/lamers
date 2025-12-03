@@ -1,0 +1,20 @@
+{
+    "version": "0.2",
+    "description": "This utility allows you to lock every available memory regions of an arbitrary process into its working set.",
+    "homepage": "https://github.com/0vercl0k/lockmem",
+    "license": "MIT",
+    "hash": "258b6f003b5eb26221f652c6bab9d0942514f9cb3074ac989e937af9e08f8393",
+    "url": "https://github.com/0vercl0k/lockmem/releases/download/v0.2/bin-x64.zip",
+    "bin": "lockmem.exe",
+    "checkver": {
+        "url": "https://github.com/0vercl0k/lockmem/releases",
+        "re": "/tag/(?:v|V)(?<version>[\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://github.com/0vercl0k/lockmem/releases/download/v$version/bin-x64.zip",
+        "hash": {
+            "url": "https://github.com/0vercl0k/lockmem/releases/tag/v$matchVersion",
+            "regex": "(?s)$basename.*?$sha256"
+        }
+    }
+}

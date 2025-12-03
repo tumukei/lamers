@@ -1,0 +1,19 @@
+{
+    "version": "1.1",
+    "description": "Commodore (C64,C16,Plus/4,VIC-20) emulator with the biggest range of debugging functions.",
+    "notes": "Still doesn't have sound support and no disk drive emulation.",
+    "homepage": "https://problemkaputt.de/c64.htm",
+    "license": "Freeware",
+    "url": "https://problemkaputt.de/no$c64-w.zip",
+    "hash": "sha1:02891e7af77f6b8f5d97084bc23e2c58d0afc7f6",
+    "shortcuts": [
+        [
+            "no$c64.exe",
+            "no$c64"
+        ]
+    ],
+    "checkver": "in Version ([\\d.]+)",
+    "autoupdate": {
+        "url": "https://problemkaputt.de/no$c64-w.zip"
+    }
+}

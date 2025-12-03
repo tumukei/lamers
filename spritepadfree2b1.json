@@ -1,0 +1,31 @@
+{
+    "version": "2.0-b1",
+    "description": "Sprite Pad is an image editor/animator for sprite images that are compatible with the classic 1980's Commodore 64 home computer system.",
+    "notes": "Needs .NET Framework 3.5 enabled in Windows features.",
+    "homepage": "https://subchristsoftware.itch.io/spritepad-c64-pro",
+    "license": "Freeware",
+    "url": "https://csdb.dk/release/download.php?id=163858#/spritepad20b1.zip",
+    "hash": "148b9af2d71d8d4e0ba4a1b6c6e007f886a4008936beb1ef2067950f9b0d5e1d",
+    "extract_dir": "SpritePad v2b1",
+    "shortcuts": [
+        [
+            "SpritePad.exe",
+            "SpritePad 2.0-b1"
+        ]
+    ],
+    "checkver": {
+        "url": "https://csdb.dk/group/?id=3510",
+        "re": "download.php.id=(?<dlid>[\\d]+).*SpritePad V([23][\\d.]+) Beta (?<beta>[\\d]+)",
+        "replace": "${1}-b${beta}"
+    },
+    "autoupdate": {
+        "url": "https://csdb.dk/release/download.php?id=$matchDlid#/spritepad$cleanVersion.zip",
+        "extract_dir": "SpritePad v$majorVersionb$matchBeta",
+        "shortcuts": [
+            [
+                "SpritePad.exe",
+                "SpritePad $majorVersion.$minorVersion-b$matchBeta"
+            ]
+        ]
+    }
+}

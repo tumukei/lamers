@@ -1,0 +1,15 @@
+{
+    "version": "12.0",
+    "description": "Structured Programming Language for 8-bit 6502/65c02 microprocessors",
+    "homepage": "https://github.com/irmen/prog8",
+    "license": "GPL-3.0-only",
+    "hash": "4ea4b7e86215223843bb4b598735e11997bba2f5c1c319b49242613f511bf909",
+    "url": "https://github.com/irmen/prog8/releases/download/v12.0/prog8c-12.0-all.jar",
+    "bin": [ [ "java.exe", "prog8", "-jar $dir/prog8c-12.0-all.jar" ] ],
+    "suggest": { "64tass": [ "64tass" ] },
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/irmen/prog8/releases/download/v$version/prog8c-$version-all.jar",
+        "bin": [ [ "java.exe", "prog8", "-jar $dir/prog8c-$version-all.jar" ] ]
+    }
+}

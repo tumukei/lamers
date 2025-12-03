@@ -1,0 +1,30 @@
+{
+    "version": "1.242",
+    "description": "DriveSort sorts the directory tables of a volume formatted in FAT12, FAT16 or FAT32. This sort orders the files on the disk according to a customizable order.",
+    "homepage": "https://www.anerty.net/software/file/DriveSort/",
+    "license": "Freeware",
+    "suggest": {
+        "vcredist": "extras/vcredist2022"
+    },
+    "notes": "vcredist needs to be 32bit one, not 64bit.",
+    "url": "https://www.anerty.net/dl/DriveSort_en.zip",
+    "hash": "sha1:2cd7854f723436821f00648cc771095ea6331345",
+    "shortcuts": [
+        [
+            "DriveSort.exe",
+            "DriveSort"
+        ]
+    ],
+    "checkver": {
+        "re": "[>]v([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://www.anerty.net/dl/DriveSort_en.zip",
+        "hash": {
+            "url": "https://www.anerty.net/software/file/DriveSort/",
+            "regex": "SHA1..([a-fA-F0-9]{40})"
+        }
+    },
+    "persist": "DriveSort.ini",
+    "pre_install": ["sc -Path \"$dir\\DriveSort.ini\" -Value '[Settings]','UpdateAllowed=0'"]
+}

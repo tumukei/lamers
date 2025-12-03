@@ -1,0 +1,24 @@
+{
+    "version": "0.6.1.11",
+    "description": "C64 low level pixel editor for Windows. Loosely inspired by Photoshop, Deluxe Paint and Ultrafont+",
+    "notes": "32 bit version offers autoupdate to 64 bit version.",
+    "homepage": "https://github.com/Hammarberg/pixcen",
+    "license": "GPL-3.0-only",
+    "url": "https://binarybone.com/pixcen/pixcen.zip",
+    "architecture": {
+        "32bit": {
+            "url": "https://csdb.dk/release/download.php?id=184964#/pixcen.zip",
+            "hash": "sha1:5834c44c64528aebc62dd28d1f1838423ffbdd3e"
+        },
+        "64bit": {
+            "url": "https://csdb.dk/release/download.php?id=184963#/pixcen64.zip",
+            "hash": "sha1:a05d47e1fcd951d91fc714f0c9d2afb1a06b9608"
+        }
+    },
+    "shortcuts": [
+        [
+            "pixcen.exe",
+            "Pixcen 0.6.1.11"
+        ]
+    ]
+}
