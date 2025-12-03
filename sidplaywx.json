@@ -1,19 +1,17 @@
 {
-    "version": "0.17.0",
+    "version": "0.17.1",
     "description": "GUI player for Commodore 64 SID music files based on libsidplayfp and wxWidgets.",
     "homepage": "https://github.com/bytespiller/sidplaywx",
     "license": "GPL-3.0-only",
-    "hash": "sha1:bcaae0431c2870b297c9c35f663b6c9fa61c4566",
-    "url": "https://github.com/bytespiller/sidplaywx/releases/download/v0.17.0/sidplaywx-v0.17.0-win64.7z",
+    "hash": "f1a46e5c885caf262efdb299e4bdad95b4029c0b7aa689813149833fa80a3310",
+    "url": "https://github.com/bytespiller/sidplaywx/releases/download/v0.17.1/sidplaywx-v0.17.1-win64.7z",
     "shortcuts": [
         [
             "sidplaywx.exe",
             "sidplaywx"
         ]
     ],
-    "checkver": {
-        "github": "https://github.com/bytespiller/sidplaywx"
-    },
+    "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/bytespiller/sidplaywx/releases/download/v$version/sidplaywx-v$version-win64.7z"
     }
